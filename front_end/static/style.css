@@ -1,123 +1,102 @@
+:root {
+  --primary-color: #6200ee;
+  --primary-dark: #3700b3;
+  --secondary-color: #03dac6;
+  --background: #121212;
+  --surface: #1e1e1e;
+  --on-surface: #e0e0e0;
+  --e-rank: #71a6d2;
+  --d-rank: #36b275;
+  --c-rank: #fbbc12;
+  --b-rank: #f67723;
+  --a-rank: #e94c3d;
+  --s-rank: #9c4fd0;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a2e;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--on-surface);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: var(--surface);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, #3700b3 0%, transparent 70%);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.rank-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.rank-E { background-color: var(--e-rank); color: #1a1a1a; }
+.rank-D { background-color: var(--d-rank); color: #1a1a1a; }
+.rank-C { background-color: var(--c-rank); color: #1a1a1a; }
+.rank-B { background-color: var(--b-rank); color: #1a1a1a; }
+.rank-A { background-color: var(--a-rank); color: #1a1a1a; }
+.rank-S { background-color: var(--s-rank); color: white; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+      grid-template-columns: 1fr;
   }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .header h1 {
-    font-size: 2.5rem;
-    color: #16c79a;
-    margin-bottom: 10px;
-  }
-  
-  .card {
-    background-color: #242f3f;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .hunter-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .rank-badge {
-    font-size: 3rem;
-    font-weight: bold;
-    background-color: #f39c12;
-    color: #1a1a2e;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-  
-  .progress-bar {
-    height: 20px;
-    background-color: #16213e;
-    border-radius: 10px;
-    margin: 10px 0;
-    overflow: hidden;
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background-color: #4361ee;
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out;
-  }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  
-  .stat-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .shadows-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  
-  .shadow-item {
-    background-color: #16213e;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .login-form {
-    max-width: 400px;
-    margin: 100px auto;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #16213e;
-    color: white;
-  }
-  
-  .btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .btn-primary {
-    background-color: #4361ee;
-    color: white;
-  }
+}
+
+.card {
+  background-color: var(--surface);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.card h2 {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  display: flex;
