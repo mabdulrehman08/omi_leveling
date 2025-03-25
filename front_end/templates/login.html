@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omi-Leveling - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Omi-Leveling</h1>
+      <p>Enter your Session ID to access your Hunter profile</p>
+    </div>
+    
+    <div class="card login-form">
+      <div class="form-group">
+        <label for="session-id">Session ID</label>
+        <input type="text" id="session-id" class="form-control" placeholder="Enter your Omi Session ID">
+      </div>
+      <button onclick="login()" class="btn btn-primary">Access Hunter Profile</button>
+    </div>
+  </div>
+  
+  <script>
+    function login() {
+      const sessionId = document.getElementById('session-id').value.trim();
+      
+      if (!sessionId) {
+        alert('Please enter a session ID');
+        return;
+      }
+      
+      // Store session ID in local storage
+      localStorage.setItem('sessionId', sessionId);
+      
+      // Redirect to dashboard
+      window.location.href = '/dashboard';
+    }
+  </script>
+</body>
+</html>

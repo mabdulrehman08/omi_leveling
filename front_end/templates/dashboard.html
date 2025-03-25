@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omi-Leveling - Hunter Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Omi-Leveling</h1>
+      <p>Your Solo Leveling Journey</p>
+    </div>
+    
+    <div class="card">
+      <div class="hunter-info">
+        <div>
+          <h2 id="hunter-name">Hunter</h2>
+          <p>Level <span id="hunter-level">1</span></p>
+          <p>Gates Cleared: <span id="gates-cleared">0</span></p>
+        </div>
+        <div class="rank-badge" id="hunter-rank">E</div>
+      </div>
+      
+      <h3>Level Progress</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" id="level-progress" data-percent="0" style="width: 0%"></div>
+      </div>
+      <p id="xp-text">0/100 XP</p>
+    </div>
+    
+    <div class="card">
+      <h3>Hunter Stats</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span>Strength</span>
+          <span id="strength-value">10</span>
+        </div>
+        <div class="stat-item">
+          <span>Intelligence</span>
+          <span id="intelligence-value">10</span>
+        </div>
+        <div class="stat-item">
+          <span>Agility</span>
+          <span id="agility-value">10</span>
+        </div>
+        <div class="stat-item">
+          <span>Endurance</span>
+          <span id="endurance-value">10</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Acquired Shadows</h3>
+      <div id="shadows-list" class="shadows-list">
+        <p>No shadows acquired yet.</p>
+      </div>
+    </div>
+    
+    <button onclick="logout()" class="btn btn-primary">Logout</button>
+  </div>
+  
+  <script src="/static/js/dashboard.js"></script>
+  <script>
+    function logout() {
+      localStorage.removeItem('sessionId');
+      window.location.href = '/login';
+    }
+  </script>
+</body>
+</html>
