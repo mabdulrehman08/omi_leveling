@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling System - Login</title>
+    <link rel="stylesheet" href="/front_end/static/login.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="background-particles" id="particles"></div>
+    
+    <!-- Node network -->
+    <div class="node-network" id="nodeNetwork"></div>
+    
+    <!-- Magic circles -->
+    <svg class="magic-circle top" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" stroke="var(--primary-color)" stroke-width="0.5" fill="none" />
+        <circle cx="50" cy="50" r="40" stroke="var(--primary-color)" stroke-width="0.3" fill="none" />
+        <path d="M50,2 L50,98 M2,50 L98,50 M15,15 L85,85 M15,85 L85,15" stroke="var(--primary-color)" stroke-width="0.2" />
+        <circle cx="50" cy="50" r="30" stroke="var(--primary-color)" stroke-width="0.2" fill="none" stroke-dasharray="1,1" />
+    </svg>
+    
+    <svg class="magic-circle bottom" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" stroke="var(--secondary-color)" stroke-width="0.5" fill="none" />
+        <circle cx="50" cy="50" r="40" stroke="var(--secondary-color)" stroke-width="0.3" fill="none" />
+        <path d="M26,8 L74,92 M8,26 L92,74" stroke="var(--secondary-color)" stroke-width="0.2" />
+        <polygon points="50,5 30,35 5,50 30,65 50,95 70,65 95,50 70,35" stroke="var(--secondary-color)" stroke-width="0.2" fill="none" />
+    </svg>
+        <!-- Add this after existing magic circles -->
+    <svg class="magic-circle interactive" viewBox="0 0 100 100">
+        <path d="M50 15L60 40L85 40L65 55L75 80L50 65L25 80L35 55L15 40L40 40Z" 
+            stroke="var(--s-rank)" 
+            stroke-width="0.5" 
+            fill="none"
+            filter="url(#glow)"/>
+    </svg>
+
+    <!-- Add filter definition in CSS -->
+    <style>
+    .magic-circle.interactive {
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.05;
+        animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% { opacity: 0.05; filter: brightness(1); }
+        50% { opacity: 0.15; filter: brightness(1.5); }
+    }
+    </style>
+        
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Rank emblem -->
+            <div class="rank-emblem rank-e">E</div>
+            
+            <div class="login-header">
+                <div class="logo">
+                    <div class="logo-circle"></div>
+                    <div class="logo-inner">OMI</div>
+                </div>
+                <h1 class="title">SOLO LEVELING</h1>
+                <p class="subtitle">Begin your hunter journey with Omi</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="form-label">Hunter ID</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your hunter ID" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="login-button">ENTER THE SYSTEM</button>
+                
+                <div class="login-options">
+                    <label>
+                        <input type="checkbox" id="remember"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+            
+            <div class="sign-up">
+                <p>Not yet a hunter? <a href="#">Register now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="solo-leveling-login.js"></script>
+</body>
+</html>
