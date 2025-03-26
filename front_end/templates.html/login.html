@@ -27,43 +27,18 @@
         <path d="M26,8 L74,92 M8,26 L92,74" stroke="var(--secondary-color)" stroke-width="0.2" />
         <polygon points="50,5 30,35 5,50 30,65 50,95 70,65 95,50 70,35" stroke="var(--secondary-color)" stroke-width="0.2" fill="none" />
     </svg>
-        <!-- Add this after existing magic circles -->
-    <svg class="magic-circle interactive" viewBox="0 0 100 100">
-        <path d="M50 15L60 40L85 40L65 55L75 80L50 65L25 80L35 55L15 40L40 40Z" 
-            stroke="var(--s-rank)" 
-            stroke-width="0.5" 
-            fill="none"
-            filter="url(#glow)"/>
-    </svg>
-
-    <!-- Add filter definition in CSS -->
-    <style>
-    .magic-circle.interactive {
-        width: 400px;
-        height: 400px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.05;
-        animation: pulse-glow 4s ease-in-out infinite;
-    }
-
-    @keyframes pulse-glow {
-        0%, 100% { opacity: 0.05; filter: brightness(1); }
-        50% { opacity: 0.15; filter: brightness(1.5); }
-    }
-    </style>
-        
+    
+    <!-- Diamond OMI Badge -->
+    <div class="diamond-badge" id="diamondBadge">
+        <svg viewBox="0 0 100 100" class="diamond-shape">
+            <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="var(--primary-color)" opacity="0.8"/>
+            <text x="50" y="60" text-anchor="middle" fill="white" font-size="40" font-weight="bold">OMI</text>
+        </svg>
+    </div>
+    
     <div class="login-container">
         <div class="login-card">
-            <!-- Rank emblem -->
-            <div class="rank-emblem rank-e">E</div>
-            
             <div class="login-header">
-                <div class="logo">
-                    <div class="logo-circle"></div>
-                    <div class="logo-inner">OMI</div>
-                </div>
                 <h1 class="title">SOLO LEVELING</h1>
                 <p class="subtitle">Begin your hunter journey with Omi</p>
             </div>
@@ -95,6 +70,6 @@
         </div>
     </div>
 
-    <script src="solo-leveling-login.js"></script>
+    <script src="/front_end/static/login.js"></script>
 </body>
 </html>
