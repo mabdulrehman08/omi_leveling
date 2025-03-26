@@ -1,2 +1,5 @@
 # omi_leveling
-Omi is leveled up. What about you?
+Are you looking to level up?
+If yes then omi is for you...
+Still underdevelopment stay tuned 
+
