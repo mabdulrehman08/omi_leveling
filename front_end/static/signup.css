@@ -1,0 +1,74 @@
+/* General Styling */
+body {
+    background: radial-gradient(circle at top, #1a1a2e, #0f0f1f);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Signup Box */
+.container {
+    width: 350px;
+    margin: 10% auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(72, 0, 255, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+/* Title */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+}
+
+input:focus {
+    border: 1px solid #7209b7;
+    box-shadow: 0 0 10px rgba(114, 9, 183, 0.6);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #7209b7, #560bad);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #f72585, #b5179e);
+    box-shadow: 0 0 15px rgba(247, 37, 133, 0.6);
+}
+
+/* Login Redirect */
+p a {
+    color: #f72585;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
