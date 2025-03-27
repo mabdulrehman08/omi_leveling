@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Omi-Leveling - Hunter Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/front_end/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/front_end/static/dashboard.css">
 </head>
 <body>
+
+  <div class="particles" id="particles"></div>
+  
   <div class="container">
     <div class="header">
       <h1>Omi-Leveling</h1>
@@ -21,18 +25,18 @@
           <p>Level <span id="hunter-level">1</span></p>
           <p>Gates Cleared: <span id="gates-cleared">0</span></p>
         </div>
-        <div class="rank-badge" id="hunter-rank">E</div>
+        <div class="rank-badge rank-e" id="hunter-rank">E</div>
       </div>
       
-      <h3>Level Progress</h3>
+      <h3><i class="fas fa-chart-line"></i> Level Progress</h3>
       <div class="progress-bar">
-        <div class="progress-fill" id="level-progress" data-percent="0" style="width: 0%"></div>
+        <div class="progress-fill" id="level-progress" style="width: 0%"></div>
       </div>
       <p id="xp-text">0/100 XP</p>
     </div>
     
     <div class="card">
-      <h3>Hunter Stats</h3>
+      <h3><i class="fas fa-tachometer-alt"></i> Hunter Stats</h3>
       <div class="stats-grid">
         <div class="stat-item">
           <span>Strength</span>
@@ -54,7 +58,7 @@
     </div>
     
     <div class="card">
-      <h3>Current Quest</h3>
+      <h3><i class="fas fa-scroll"></i> Current Quest</h3>
       <div id="current-quest" class="quest-container">
         <div class="quest-header">
           <div class="quest-title">No Active Quest</div>
@@ -71,21 +75,24 @@
     </div>
     
     <div class="card">
-      <h3>Acquired Shadows</h3>
+      <h3><i class="fas fa-ghost"></i> Acquired Shadows</h3>
       <div id="shadows-list" class="shadows-list">
-        <p>No shadows acquired yet.</p>
+        <div class="shadow-item">
+          <img src="https://via.placeholder.com/60" alt="Shadow">
+          <h4>Shadow Soldier</h4>
+          <p>Level 1</p>
+        </div>
+        <div class="shadow-item">
+          <img src="https://via.placeholder.com/60" alt="Shadow">
+          <h4>Shadow Archer</h4>
+          <p>Level 2</p>
+        </div>
       </div>
     </div>
     
     <button onclick="logout()" class="btn btn-primary">Logout</button>
   </div>
   
-  <script src="/static/js/dashboard.js"></script>
-  <script>
-    function logout() {
-      localStorage.removeItem('sessionId');
-      window.location.href = '/login';
-    }
-  </script>
+  <script src="/front_end/static/dashboard.js"></script>
 </body>
 </html>
